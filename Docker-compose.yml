@@ -1,23 +1,19 @@
 version: '2.1'
+
 services:
   mymvcweb:
     build:
       context: ./mymvcweb
       dockerfile: Dockerfile
     expose:
-      - "5000"
+     - '5000'
     restart: always
   reverseproxy:
     build:
       context: ./reverseproxy
       dockerfile: Dockerfile
     ports:
-      - "80:80"
+     - "8080:80"
     restart: always
-    links :
+    links:
       - mymvcweb
-
-
-
-
-     
